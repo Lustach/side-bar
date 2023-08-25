@@ -1,0 +1,90 @@
+.sidebar {
+    width: 300px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: -300px;
+    background: gray;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid black;
+    //transform: translateX(-100%); /* Initially hide the sidebar */
+    //transition: transform 0.3s ease-in-out; 
+  }
+.open{
+    display: flex;
+}
+.hide{
+    transition: all 0.3s ease-in-out;
+    width: 0 !important;
+    /* display: none; */
+}
+.hide > *{
+display: none;
+}
+.sidebar-menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px;
+    color: white;
+}
+  
+.toggle-button {
+    position: absolute;
+    left: 274px;
+    background: white;
+    border-radius:100px;
+    border: 1px solid black;
+    color: black;
+    height: 40px;
+    padding:0;
+    width: 40px;
+    cursor: pointer;
+    z-index: 11;
+    top: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.toggle-button__hide{
+    left: -15px;
+}
+.toggle-button__open{
+    left: 274px;
+    
+}
+.left{
+    left: 0;
+}
+.right{
+    right: 0;
+    left: initial;
+}
+.overlay{
+    position: absolute;
+    width: calc(100% - 300px);
+    height: 100%;
+    background-color: lightgray;
+    opacity: 0.6;
+    top: 0;
+    left: 300px;
+    z-index:11;
+}
+.close-button{
+    position: absolute;
+    left: 274px;
+    background: white;
+    border-radius:100px;
+    border: 1px solid black;
+    color: black;
+    height: 40px;
+    padding:0;
+    width: 40px;
+    cursor: pointer;
+    z-index: 11;
+    top: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* transition: all 0.3s ease-in-out; */
+}
