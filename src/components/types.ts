@@ -1,11 +1,12 @@
-import { ReactElement, ReactPortal } from 'react';
-
-// Your type definitions here
-type ReactText = string | number;
-type ReactChild = ReactElement | ReactText;
-
-interface ReactNodeArray extends Array<ReactNode> { }
-type ReactFragment = object | ReactNodeArray;
-export type ReactNode = ReactChild | ReactFragment | ReactPortal | boolean | null | undefined;
+import { CSSProperties } from 'react';
 
 export type Position = 'right' | 'left'
+export interface SidebarProps {
+    isOpen: boolean
+    position: Position
+    style?: CSSProperties
+    className?: CSSProperties
+    dataKey?: string
+    overlay?: boolean
+    onClick?: () => void
+}

@@ -8,6 +8,7 @@
     display: flex;
     flex-direction: column;
     border-right: 1px solid black;
+    z-index: 12;
     //transform: translateX(-100%); /* Initially hide the sidebar */
     //transition: transform 0.3s ease-in-out; 
   }
@@ -30,10 +31,7 @@ display: none;
 }
   
 .toggle-button {
-    position: absolute;
-    left: 274px;
     background: white;
-    border-radius:100px;
     border: 1px solid black;
     color: black;
     height: 40px;
@@ -41,10 +39,10 @@ display: none;
     width: 40px;
     cursor: pointer;
     z-index: 11;
-    top: 42px;
     display: flex;
     justify-content: center;
     align-items: center;
+    align-self: flex-end;
 }
 .toggle-button__hide{
     left: -15px;
