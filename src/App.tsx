@@ -1,38 +1,25 @@
 import './index.css'
 import './App.css'
 import Sidebar from './components/SideBar'
-import Overlay from './components/Overlay'
 import { useState } from 'react'
 function App() {
+  //todo object
   const [isOpen1, setIsOpen1] = useState(false);
   const [isOpen2, setIsOpen2] = useState(true);
-
-  const toggleSidebar1 = () => {
-    setIsOpen1(!isOpen1);
+  const toggleSomeSidebar = (setter: React.Dispatch<React.SetStateAction<boolean>>) => {
+    setter((prevValue) => !prevValue);
   };
-  const toggleSidebar2 = () => {
-    setIsOpen1(!isOpen2);
-  };
-  const handleChildClick = () => {
-    setIsOpen1(!isOpen1);
-  }
-  const handleChildClick2 = () => {
-    setIsOpen2(!isOpen2);
-  }
   return (
     <>
-      {isOpen1 && isOpen2 ? <Overlay isOverlay /> : null}
-
-
-      <button onClick={toggleSidebar1}>{isOpen1 ? 'Close' : 'Open'} 1 sidebar</button>
-      <button onClick={toggleSidebar2}>{isOpen2 ? 'Close' : 'Open'} 2 sidebar</button>
-
+      <button onClick={() => toggleSomeSidebar(setIsOpen1)}>{isOpen1 ? 'Close' : 'Open'} 1 sidebar</button>
+      <button onClick={() => toggleSomeSidebar(setIsOpen2)}>{isOpen2 ? 'Close' : 'Open'} 2 sidebar</button>
       <Sidebar
-        onClick={handleChildClick}
+        onClick={() => toggleSomeSidebar(setIsOpen1)}
         isOpen={isOpen1}
-        position={'left'}
-        style={isOpen2 ? { zIndex: 11, width: '350px' } : {}}
+        position='left'
+        style={isOpen2 ? { zIndex: 11, width: '350px' } : undefined}
       >
+        {/* todo portal */}
         <ul>
           <li>Some Content 1</li>
           <li>Some Content 2</li>
@@ -40,12 +27,11 @@ function App() {
           <li>Some Content 4</li>
           <li>Some Content 5</li>
         </ul>
-
       </Sidebar>
       <Sidebar
-        onClick={handleChildClick2}
+        onClick={() => toggleSomeSidebar(setIsOpen2)}
         isOpen={isOpen2}
-        position={'left'}>
+        position='left'>
         <li>Sidebar 2 Content 1</li>
         <li>Sidebar 2 Content 2</li>
         <li>Sidebar 2 Content 3</li>

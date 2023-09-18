@@ -9,8 +9,6 @@
     flex-direction: column;
     border-right: 1px solid black;
     z-index: 12;
-    //transform: translateX(-100%); /* Initially hide the sidebar */
-    //transition: transform 0.3s ease-in-out; 
   }
 .open{
     display: flex;
@@ -18,10 +16,9 @@
 .hide{
     transition: all 0.3s ease-in-out;
     width: 0 !important;
-    /* display: none; */
 }
-.hide > *{
-display: none;
+.hide > * {
+    display: none;
 }
 .sidebar-menu {
     list-style-type: none;
@@ -84,5 +81,4 @@ display: none;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* transition: all 0.3s ease-in-out; */
 }

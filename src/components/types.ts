@@ -9,4 +9,5 @@ export interface SidebarProps {
     dataKey?: string
     overlay?: boolean
     onClick?: () => void
+    isOverlay?: boolean
 }
